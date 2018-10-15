@@ -1,4 +1,4 @@
-# fsqca
+# fsQCA
 1. docCap.sql  计算医生能力
 2. segment.py  按医生能力高低分割数据，输出为csv文件
 3. segment_mean_max.py  合并主题
