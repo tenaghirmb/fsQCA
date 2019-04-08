@@ -2,7 +2,7 @@
 # @Author: aka
 # @Date:   2018-07-25 16:07:56
 # @Last Modified by:   aka
-# @Last Modified time: 2019-04-08 15:24:04
+# @Last Modified time: 2019-04-08 15:57:32
 # @Email: tenag_hirmb@hotmail.com
 
 import re
@@ -50,7 +50,7 @@ def magnify(intpath, parsol):
     marks = set()
     for p in plist:
         path, _, _, _ = parse_path(p)
-        if set(intpath) > set(path):
+        if set(intpath) >= set(path):
             marks = marks | set(path)
     return marks
 
