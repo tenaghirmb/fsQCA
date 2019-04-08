@@ -2,7 +2,7 @@
 # @Author: aka
 # @Date:   2018-07-25 16:07:56
 # @Last Modified by:   aka
-# @Last Modified time: 2018-07-27 10:05:44
+# @Last Modified time: 2019-04-08 15:24:04
 # @Email: tenag_hirmb@hotmail.com
 
 import re
@@ -10,10 +10,10 @@ import os
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font
 
-txt_path = 'result/'
-dest_filename = 'fsqca.xlsx'
+txt_path = 'results/'
+dest_filename = f'{txt_path}fsqca.xlsx'
 
-var = ['ME', 'MC', 'CS', 'MAP', 'OP', 'F', 'POP', 'SOP', 'DIS']
+var = ['DR', 'SR', 'PR']
 T1 = '评论有用性'
 T2 = '评论无用性'
 
@@ -23,7 +23,7 @@ alignment = Alignment(horizontal='center', vertical='center')
 
 
 def find_paths(data):
-    p = re.compile('\S*\*.*\n')
+    p = re.compile('\S+\s+\d+\.?\d*\s+\d+\.?\d*\s+\d+\.?\d*\s*\n')
     path = p.findall(data, 68)
     path = list(map(lambda x: x.strip(), path))
     return path
